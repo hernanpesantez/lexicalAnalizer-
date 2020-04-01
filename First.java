@@ -1,10 +1,12 @@
 
+//class for adding function expression "first"
 class First extends FunExp {
-	First(ExpList e) {
-		expList = e;
+
+	First(ExpList e_) {
+		expList = e_;
 	}
 
-	String getFunOp() {
+	String getOp() {
 		return "first";
 	}
 }

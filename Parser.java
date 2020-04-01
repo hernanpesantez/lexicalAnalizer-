@@ -47,23 +47,23 @@ public abstract class Parser extends LexAnalyzer {
 
 	static boolean errorFound = false;
 
-	public static FunDefList funDefList()
+	public static FunctionDefList functionDefList()
 
 	// <fun def list> --> <fun def> | <fun def> <fun def list>
 
 	{
-		FunDef funDef = funDef();
+		FunctionDef functionDef = functionDef();
 
 		if (state == State.Id) {
-			FunDefList funDefList = funDefList();
-			return new MultipleFunDef(funDef, funDefList);
+			FunctionDefList functionDefList = functionDefList();
+			return new MultipleFunDef(functionDef, functionDefList);
 		} else
-			return funDef;
+			return functionDef;
 	}
 
-	public static FunDef funDef()
+	public static FunctionDef functionDef()
 
-	// <fun def> --> "def" <header> = <exp>
+	// <fun def> --> <header> "{" <exp> "}"
 
 	{
 		System.out.println("Assignment" + state);
@@ -79,7 +79,7 @@ public abstract class Parser extends LexAnalyzer {
 
 				if (state == State.RBrace) {
 					getToken();
-					return new FunDef(header, exp);
+					return new FunctionDef(header, exp);
 
 				} else
 					errorMsg(1);
@@ -123,8 +123,8 @@ public abstract class Parser extends LexAnalyzer {
 
 	public static Exp exp()
 
-	// <exp> --> <id> | <int> | <foat> | <floatE> | "nil" | "(" <fun exp> ")" | "if"
-	// <exp> "then" <exp> "else" <exp>
+	// ⟨exp⟩ → ⟨id⟩ | ⟨int⟩ | ⟨float⟩ | ⟨floatE⟩ | ⟨floatF⟩ | "nil" | "(" ⟨fun exp⟩
+	// ")" | "if" ⟨exp⟩ "then" ⟨exp⟩ "else" ⟨exp⟩
 
 	{
 		switch (state) {
@@ -152,12 +152,12 @@ public abstract class Parser extends LexAnalyzer {
 			case Keyword_nil:
 
 				getToken();
-				return nil; // nil is defined at the top of this class.
+				return nil; // nil is final type
 
 			case LParen:
 
 				getToken();
-				FunExp funExp = funExp();
+				FunExp funExp = functionExp();
 				if (state == State.RParen) {
 					getToken();
 					return funExp;
@@ -190,15 +190,7 @@ public abstract class Parser extends LexAnalyzer {
 		}
 	}
 
-	public static FunExp funExp()
-
-	// <fun exp> --> <fun op> <exp list>
-	// <fun op> --> <id> | "pair" | "first" | "second" | <arith op> | <bool op> |
-	// <comp op>
-	// <fun name> --> <id>
-	// <arith op> --> + | - | * | /
-	// <bool op> --> "and" | "or" | "not"
-	// <comp op> --> "<" | "<=" | ">" | ">=" | "="
+	public static FunExp functionExp()
 
 	{
 		switch (state) {
@@ -361,11 +353,11 @@ public abstract class Parser extends LexAnalyzer {
 
 		getToken();
 
-		FunDefList funDefList = funDefList();
+		FunctionDefList functionDefList = functionDefList();
 		if (!t.isEmpty())
 			errorMsg(0);
 		else if (!errorFound)
-			funDefList.printParseTree("");
+			functionDefList.printParseTree("");
 
 		closeIO();
 	}

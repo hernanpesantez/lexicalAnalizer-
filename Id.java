@@ -1,21 +1,9 @@
-
+//Class for adding Id expression 
 class Id extends Exp {
 	String id;
 
-	Id(String s) {
-		id = s;
-	}
-
-	public Val eval(String a, int index) {
-
-		a.length();
-		if (a.charAt(index) == '+') {// insert conditions that do not
-			System.out.println("Error " + a + " is not an Id.");
-		} else if (a.charAt(index) == '-') {
-			System.out.println("Error " + a + " is not an Id.");
-		}
-		// And so on
-		return eval(a, index++);
+	Id(String id_) {
+		id = id_;
 	}
 
 	void printParseTree(String indent) {

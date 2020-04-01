@@ -1,20 +1,9 @@
-
+//class for adding integer exoression
 class Int extends Exp {
 	int intElem;
 
-	Int(int i) {
-		intElem = i;
-	}
-
-	public Val eval(String a, int index) {
-
-		a.length();
-		if (Integer.valueOf(a.charAt(index)) < 58 && Integer.valueOf(a.charAt(index)) > 47) {// insert conditions that
-																								// do not
-			System.out.println("Error " + a + " is not an Int.");
-		}
-		// And so on
-		return eval(a, index++);
+	Int(int int_) {
+		intElem = int_;
 	}
 
 	void printParseTree(String indent) {

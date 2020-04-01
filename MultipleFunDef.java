@@ -1,10 +1,10 @@
 
-class MultipleFunDef extends FunDefList {
-	FunDef funDef;
-	FunDefList funDefList;
+class MultipleFunDef extends FunctionDefList {
+	FunctionDef functionDef;
+	FunctionDefList functionDefList;
 
-	MultipleFunDef(FunDef fdef, FunDefList fdeflist) {
-		funDef = fdef;
-		funDefList = fdeflist;
+	MultipleFunDef(FunctionDef functionDef_, FunctionDefList functFuntionDefList) {
+		functionDef = functionDef_;
+		functionDefList = functFuntionDefList;
 	}
 }

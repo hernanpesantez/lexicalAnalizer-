@@ -1,10 +1,12 @@
 
+//class for Ge expression
 class GeE extends FunExp {
-	GeE(ExpList e) {
-		expList = e;
+	GeE(ExpList exp) {
+		expList = exp;
 	}
 
-	String getFunOp() {
+	// get function operation
+	String getOp() {
 		return ">=";
 	}
 }

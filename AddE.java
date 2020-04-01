@@ -1,6 +1,6 @@
 
 class AddE extends FunExp
-// Adding E
+// Adding expression plu
 {
 	AddE(ExpList exp) {
 		expList = exp;

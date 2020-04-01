@@ -1,13 +1,15 @@
-
+// class for adding if expression 
 class If extends Exp {
+
+	// used for if, then, else
 	Exp exp1;
 	Exp exp2;
 	Exp exp3;
 
-	If(Exp e1, Exp e2, Exp e3) {
-		exp1 = e1;
-		exp2 = e2;
-		exp3 = e3;
+	If(Exp exp1_, Exp exp2_, Exp exp3_) {
+		exp1 = exp1_;
+		exp2 = exp2_;
+		exp3 = exp3_;
 	}
 
 	void printParseTree(String indent) {

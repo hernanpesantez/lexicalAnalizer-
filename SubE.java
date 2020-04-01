@@ -1,15 +1,12 @@
 
+//Class object for function expression sub
 class SubE extends FunExp {
 	SubE(ExpList e) {
 		expList = e;
 	}
 
-	public Val eval() {
-		return null;
-
-	}
-
-	String getFunOp() {
+	// getting funtion operation for sub
+	String getOp() {
 		return "-";
 	}
 }

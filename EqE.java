@@ -1,10 +1,11 @@
 
 class EqE extends FunExp {
-	EqE(ExpList e) {
-		expList = e;
+	// Adding expression for eq sign
+	EqE(ExpList exp) {
+		expList = exp;
 	}
 
-	String getFunOp() {
+	String getOp() {
 		return "=";
 	}
 }

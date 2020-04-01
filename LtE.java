@@ -1,10 +1,11 @@
-
+//Class to add LT expression
 class LtE extends FunExp {
 	LtE(ExpList e) {
 		expList = e;
 	}
 
-	String getFunOp() {
+	// Getting function operation
+	String getOp() {
 		return "<";
 	}
 }

@@ -1,11 +1,14 @@
 
+//Class header to derive the following
+// ⟨header⟩ → ⟨fun name⟩ ⟨parameter list⟩
+
 class Header {
 	String funName;
 	ParameterList parameterList;
 
-	Header(String f, ParameterList p) {
-		funName = f;
-		parameterList = p;
+	Header(String fm, ParameterList pl) {
+		funName = fm;
+		parameterList = pl;
 	}
 
 	void printParseTree(String indent) {

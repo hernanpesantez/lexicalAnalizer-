@@ -1,10 +1,10 @@
-
+//class object for parameter list
 class ParameterList {
 	String id;
 	ParameterList parameterList;
 
-	ParameterList(String s, ParameterList p) {
-		id = s;
-		parameterList = p;
+	ParameterList(String id_, ParameterList para) {
+		id = id_;
+		parameterList = para;
 	}
 }

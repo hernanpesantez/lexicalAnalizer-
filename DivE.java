@@ -1,10 +1,11 @@
 
 class DivE extends FunExp {
-	DivE(ExpList e) {
-		expList = e;
+	// Adding expression for div
+	DivE(ExpList exp) {
+		expList = exp;
 	}
 
-	String getFunOp() {
+	String getOp() {
 		return "/";
 	}
 }

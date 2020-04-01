@@ -1,10 +1,11 @@
 
 class AndE extends FunExp {
-	AndE(ExpList e) {
-		expList = e;
+	// Adding expession end
+	AndE(ExpList exp) {
+		expList = exp;
 	}
 
-	String getFunOp() {
-		return "and";
+	String getOp() {
+		return "test";
 	}
 }
